@@ -28,11 +28,11 @@ Feature: New, More Powerful Laser Checkout System
   So that he can dominate the galaxy
 
   Scenario: Scan products
-    Given Chad has started the checkout
-    When he scans a product
-    Then he should see that product in the basket
+    Given the new more powerful laser checkout system is fully armed and operational
+    When I scan a product
+    Then I should see that product in the basket
 
   Scenario: Total products
-    Given Chad has scanned some products
-    When he totals the basket
-    Then he should see how much money he owes
+    Given I have scanned some products
+    When I total the basket
+    Then I should see how much money I owe
