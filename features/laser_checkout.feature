@@ -2,7 +2,7 @@ Feature: New, More Powerful Laser Checkout System
 
   (Reference: http://www.youtube.com/watch?v=Cu7gzjK16oc#t=2m57s)
 
-  The Emperor's quest for global domination has prompted him to open a
+  The Emperor's quest for galactic domination has prompted him to open a
   supermarket (Empire Market) with a new more powerful laser checkout system.
 
   Emperor Randy has instructed Lord (Chad) Vader to ensure that it becomes fully armed and operational.
@@ -31,3 +31,8 @@ Feature: New, More Powerful Laser Checkout System
     Given Chad has started the checkout
     When he scans a product
     Then he should see that product in the basket
+
+  Scenario: Total products
+    Given Chad has scanned some products
+    When he totals the basket
+    Then he should see how much money he owes

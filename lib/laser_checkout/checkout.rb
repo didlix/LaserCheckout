@@ -22,5 +22,15 @@ module LaserCheckout
       self
     end
 
+    def total
+      total = 0
+
+      return total if basket.empty?
+
+      basket.each { |item| total+= item.price }
+
+      return total
+    end
+
   end
 end

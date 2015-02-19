@@ -4,6 +4,7 @@ module LaserCheckout
   describe Checkout do
 
     let(:a_product) { "001" }
+    let(:valid_codes) { ["001", "002", "003"] }
     before(:each) { @checkout = Checkout.new }
 
     describe "#basket" do
@@ -31,7 +32,6 @@ module LaserCheckout
 
       context "with a valid code" do
         it "adds products to its basket" do
-          valid_codes = ["001", "002", "003"]
 
           valid_codes.each do |code|
             @checkout.scan(code)
@@ -46,5 +46,25 @@ module LaserCheckout
         end
       end
     end
+
+    describe "#total" do
+
+      context "with an empty basket" do
+        it "returns 0" do
+          expect(@checkout.total).to eq(0)
+        end
+      end
+
+      context "with items in the basket" do
+        it "totals the amounts of items in its basket" do
+          valid_codes.each do |code|
+            @checkout.scan(code)
+          end
+
+          expect(@checkout.total).to eq(74.2)
+        end
+      end
+    end
+
   end
 end
