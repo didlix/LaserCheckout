@@ -14,7 +14,7 @@ module LaserCheckout
       when "002"
         product = Product.new("002", 45.00)
       when "003"
-        product = Product.new("002", 19.95)
+        product = Product.new("003", 19.95)
       else
         raise(InvalidCodeException, "Invalid code entered: #{code}")
       end
