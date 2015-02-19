@@ -55,10 +55,3 @@ Feature: New, More Powerful Laser Checkout System
     Scenarios: Both offers can be used in combination
       | Product codes      | Total |
       | 001, 002, 001, 003 | 73.76 |
-
-
-
-
-
-
-
