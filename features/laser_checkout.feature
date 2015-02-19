@@ -50,7 +50,7 @@ Feature: New, More Powerful Laser Checkout System
     Scenarios: Lavendar hearts become £8.50 when you buy two or more
       | Product codes | Total |
       | 001, 003, 001 | 36.95 |
-      | 001, 001, 001 | 35.5  |
+      | 001, 001, 001 | 25.5  |
 
     Scenarios: Both offers can be used in combination
       | Product codes      | Total |
