@@ -36,3 +36,29 @@ Feature: New, More Powerful Laser Checkout System
     Given I have scanned some products
     When I total the basket
     Then I should see how much money I owe
+
+  Scenario Outline: Checkout applies special offers
+    Given the new more powerful laser checkout system is fully armed and operational
+    And I scan these products: <Product codes>
+    When I total the basket
+    Then the total owed should be: "<Total>"
+
+    Scenarios: 10% off when I spend over £60
+      | Product codes | Total |
+      | 001, 002, 003 | 66.78 |
+
+    Scenarios: Lavendar hearts become £8.50 when you buy two or more
+      | Product codes | Total |
+      | 001, 003, 001 | 36.95 |
+      | 001, 001, 001 | 35.5  |
+
+    Scenarios: Both offers can be used in combination
+      | Product codes      | Total |
+      | 001, 002, 001, 003 | 73.76 |
+
+
+
+
+
+
+

@@ -1,8 +1,9 @@
 module LaserCheckout
   class Checkout
-    attr_accessor :basket
+    attr_accessor :basket, :offers
 
-    def initialize
+    def initialize(offers = [])
+      self.offers = offers
       self.basket = []
     end
 
@@ -27,9 +28,21 @@ module LaserCheckout
 
       return total if basket.empty?
 
+      apply_offers_to_basket
+
       basket.each { |item| total+= item.price }
 
       return total
+    end
+
+    private
+
+    def apply_offers_to_basket
+      offers.each do |rule|
+        rule.apply_to!(basket)
+      end
+
+      basket
     end
 
   end

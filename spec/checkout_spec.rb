@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'offer_fifty_percent_off'
 
 module LaserCheckout
   describe Checkout do
@@ -6,6 +7,16 @@ module LaserCheckout
     let(:a_product) { "001" }
     let(:valid_codes) { ["001", "002", "003"] }
     before(:each) { @checkout = Checkout.new }
+
+    describe "#initialize" do
+
+      it "assigns an optional array of offers" do
+        offers = [double("rule1"), double("rule2")]
+        checkout = Checkout.new(offers)
+        expect(checkout.offers).to eq offers
+      end
+
+    end
 
     describe "#basket" do
 
@@ -64,7 +75,14 @@ module LaserCheckout
           expect(@checkout.total).to eq(74.2)
         end
       end
-    end
 
+      it "applies offers to the basket" do
+        offers = [ OfferFiftyPercentOff.new ]
+
+        checkout = Checkout.new(offers)
+        2.times { checkout.scan("001") }
+        expect(checkout.total).to eq(9.25)
+      end
+    end
   end
 end
