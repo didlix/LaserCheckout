@@ -1,5 +1,5 @@
 Given(/^the new more powerful laser checkout system is fully armed and operational$/) do
-  offers = []
+  offers = [LaserCheckout::OfferTenPercentOff.new]
   @checkout = LaserCheckout::Checkout.new(offers)
 end
 
