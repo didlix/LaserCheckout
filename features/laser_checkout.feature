@@ -20,7 +20,14 @@ Feature: New, More Powerful Laser Checkout System
 
   The laser checkout system can scan items in any order, and because the Emperor and Nightshift manager change their minds often, it needs to be flexible regarding pricing rules.
 
+  Once items are "scanned" they are in the "basket". When the basket is "totaled" all "discounts" are applied.
+
 
   As Chad Vader
   I want the more powerful laser checkout system to meet the needs of my master
   So that he can dominate the galaxy
+
+  Scenario: Scan products
+    Given Chad has started the checkout
+    When he scans a product
+    Then he should see that product in the basket
