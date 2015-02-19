@@ -8,7 +8,6 @@ module LaserCheckout
 
     def process!(basket)
       basket.each do |item|
-        puts item
         item.price = item.price / 2
       end
 
