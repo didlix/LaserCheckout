@@ -36,5 +36,5 @@ Given(/^I scan these products: (.*?)$/) do |codes|
 end
 
 Then(/^the total owed should be: "(.*?)"$/) do |total|
-  expect(@total.to_f).to eq(total.to_f)
+  expect(@total).to eq(total.to_f)
 end

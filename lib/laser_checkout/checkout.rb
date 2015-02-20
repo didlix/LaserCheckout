@@ -29,9 +29,9 @@ module LaserCheckout
 
       apply_offers_to_basket
 
-      basket.each { |item| total+= item.price }
+      basket.each { |item| total+= item.price;}
 
-      return total
+      return total.round(2)
     end
 
     private

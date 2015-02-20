@@ -79,6 +79,20 @@ module LaserCheckout
         2.times { checkout.scan("001") }
         expect(checkout.total).to eq(9.25)
       end
+
+      it "rounds to 2 decimal places" do
+        offers = [
+            LaserCheckout::OfferBuyTwoLavendarHeartsReducePrice.new,
+            LaserCheckout::OfferTenPercentOff.new
+          ]
+        checkout = Checkout.new(offers)
+
+        ["001", "002", "001", "003"].each do |code|
+          checkout.scan(code)
+        end
+
+        expect(checkout.total).to eq(73.76)
+      end
     end
   end
 end
