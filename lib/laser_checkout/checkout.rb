@@ -38,8 +38,8 @@ module LaserCheckout
     private
 
     def apply_offers_to_basket
-      offers.each do |rule|
-        rule.apply_to!(basket)
+      offers.each do |offer|
+        offer.apply_to!(basket)
       end
 
       basket
