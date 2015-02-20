@@ -12,7 +12,7 @@ module LaserCheckout
 
       if total >= 60
         basket.each do |item|
-          item.price = (item.price * 0.9).round(2)
+          item.price = (item.price * 0.9).round(3)
         end
       end
 
