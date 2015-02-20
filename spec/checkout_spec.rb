@@ -37,10 +37,6 @@ module LaserCheckout
 
     describe "#scan" do
 
-      it "returns itself" do
-        expect(@checkout.scan(a_product)).to be_kind_of(Checkout)
-      end
-
       context "with a valid code" do
         it "adds products to its basket" do
 

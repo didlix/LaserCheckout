@@ -20,7 +20,6 @@ module LaserCheckout
       end
 
       self.basket << product
-      self
     end
 
     def total
