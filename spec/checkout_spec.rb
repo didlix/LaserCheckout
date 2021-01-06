@@ -39,7 +39,6 @@ module LaserCheckout
 
       context "with a valid code" do
         it "adds products to its basket" do
-
           valid_codes.each do |code|
             @checkout.scan(code)
             expect(@checkout.basket.last).to be_kind_of(Product)
