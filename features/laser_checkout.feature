@@ -16,9 +16,11 @@ Feature: New, More Powerful Laser Checkout System
 
   The Emperor wants to ensure the loyalty of his customers by offering them 10% off when they spend over £60.
 
-  Clint, the nightshift manager has too many lavendar hearts and wants to get encourage customers to buy more by reducing their price to £8.50 when their are two or more in the basket.
+  Clint, the nightshift manager has too many lavendar hearts and wants to get encourage customers to buy more by 
+  reducing their price to £8.50 when their are two or more in the basket.
 
-  The laser checkout system can scan items in any order, and because the Emperor and Nightshift manager change their minds often, it needs to be flexible regarding pricing rules.
+  The laser checkout system can scan items in any order, and because the Emperor and Nightshift manager change 
+  their minds often, it needs to be flexible regarding pricing rules.
 
   Once items are "scanned" they are in the "basket". When the basket is "totaled" all "discounts" are applied.
 
